@@ -1,14 +1,8 @@
 import React from 'react';
-import {
-  StyleSheet,
-  View,
-  Modal,
-  Button,
-  TouchableOpacity,
-} from 'react-native';
+import { StyleSheet, View, TouchableOpacity } from 'react-native';
 import { useSelector } from 'react-redux';
 import colors from '../styles/colors';
-import { BoldAppText, MediumAppText } from '../styles/text';
+import { MediumAppText } from '../styles/text';
 
 function ModifySuggestionItem({ name, addTick, selected }) {
   const suggestionList = useSelector(

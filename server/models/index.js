@@ -1,10 +1,10 @@
 const fs = require('fs');
-const path = require('path');
 const Sequelize = require('sequelize');
+const path = require('path');
 const basename = path.basename(__filename);
 const db = {};
 
-const sequelize = new Sequelize('soloprojecttest', 'davidhardy', 'admin', {
+const sequelize = new Sequelize('recoverybox', 'jcmasters', '', {
   //REL reminder to change the table name
   host: 'localhost',
   dialect: 'postgres',

@@ -1,10 +1,9 @@
-import React, { useState } from 'react';
-import { View, Text } from 'react-native';
+import React from 'react';
+import { View } from 'react-native';
 import { useSelector } from 'react-redux';
 import _ from 'lodash';
-import { BoldAppText, MediumAppText } from '../styles/text';
+import { BoldAppText } from '../styles/text';
 import colors from '../styles/colors';
-import { DateTime } from 'luxon';
 
 function MeetingsSummary() {
   const chartTimePeriod = useSelector((state) => state.helper.chartTimePeriod);
@@ -36,7 +35,7 @@ function MeetingsSummary() {
 
   return (
     <View style={{ flexDirection: 'row' }}>
-      <BoldAppText style={{ fontSize: 15 }}>You've been to </BoldAppText>
+      <BoldAppText style={{ fontSize: 15 }}>You&apos;ve been to </BoldAppText>
       <BoldAppText style={{ fontSize: 15, color: colors.orange }}>
         {meetingsToDisplay}{' '}
       </BoldAppText>

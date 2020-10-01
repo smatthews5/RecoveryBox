@@ -1,12 +1,5 @@
 import React, { useEffect } from 'react';
-import {
-  StyleSheet,
-  View,
-  Text,
-  ScrollView,
-  TouchableOpacity,
-  TouchableHighlight,
-} from 'react-native';
+import { StyleSheet, View, ScrollView, TouchableOpacity } from 'react-native';
 import { useSelector, useDispatch } from 'react-redux';
 import MeetingsSummary from '../components/MeetingsSummary';
 import FeelingGraph from '../components/graphs/FeelingGraph';
@@ -18,7 +11,6 @@ import Constants from 'expo-constants';
 import { BoldAppText, MediumAppText } from '../styles/text';
 import colors from '../styles/colors';
 import _ from 'lodash';
-import { Duration, DateTime } from 'luxon';
 
 function SummaryScreen({ route }) {
   const dispatch = useDispatch();

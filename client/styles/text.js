@@ -10,7 +10,7 @@ export const textBoldStyles = {
   marginBottom: 10,
 };
 
-const { Provider, Consumer } = React.createContext(textBoldStyles);
+const { Consumer } = React.createContext(textBoldStyles);
 
 export const BoldAppText = ({ style, ...props }) => (
   <Consumer>

@@ -1,12 +1,10 @@
 import React from 'react';
-import { StyleSheet, View, Text, Image } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 import { useSelector } from 'react-redux';
 import { MediumAppText, BoldAppText } from '../../styles/text';
-import Divider from '../Divider';
-import { VictoryArea, VictoryBar, VictoryChart, VictoryAxis } from './Victory';
+import { VictoryArea, VictoryChart, VictoryAxis } from './Victory';
 import _ from 'lodash';
 import { DateTime } from 'luxon';
-import { Defs, LinearGradient, Stop, Svg } from 'react-native-svg';
 import colors from '../../styles/colors';
 
 function FeelingGraph() {

@@ -8,7 +8,7 @@ async function getQuote(req, res) {
     res.status(200);
     res.send(quote);
   } catch (e) {
-    console.log('Error', e); // eslint-disable-line no-console
+    console.log('Error in getQuote: ', e); // eslint-disable-line no-console
     res.sendStatus(500);
   }
 }
@@ -23,7 +23,7 @@ async function getUserInfo(req, res) {
     res.status(200);
     res.send(user);
   } catch (e) {
-    console.log('Error', e); // eslint-disable-line no-console
+    console.log('Error in getUserInfo: ', e); // eslint-disable-line no-console
     res.sendStatus(500);
   }
 }
@@ -35,7 +35,7 @@ async function getAllData(req, res) {
     res.status(200);
     res.send(data);
   } catch (e) {
-    console.log('Error', e); // eslint-disable-line no-console
+    console.log('Error in getAllData:', e); // eslint-disable-line no-console
     res.sendStatus(500);
   }
 }
@@ -81,7 +81,7 @@ async function postDailyData(req, res) {
       res.status(201).send(newData);
     }
   } catch (e) {
-    console.log('Error', e); // eslint-disable-line no-console
+    console.log('Error in postDailyData:', e); // eslint-disable-line no-console
     res.sendStatus(500);
   }
 }
@@ -100,7 +100,7 @@ async function postUserInfo(req, res) {
     });
     res.status(201).send(newUser);
   } catch (e) {
-    console.log('Error', e); // eslint-disable-line no-console
+    console.log('Error in postUserInfo: ', e); // eslint-disable-line no-console
     res.sendStatus(500);
   }
 }
@@ -146,7 +146,7 @@ async function postHistoricalData(req, res) {
       res.status(201).send(newData);
     }
   } catch (e) {
-    console.log('Error', e); // eslint-disable-line no-console
+    console.log('Error in postHistoricalData: ', e); // eslint-disable-line no-console
     res.sendStatus(500);
   }
 }

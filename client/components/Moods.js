@@ -9,9 +9,7 @@ import {
   Modal,
 } from 'react-native';
 import { useDispatch, useSelector } from 'react-redux';
-import { BoldAppText, MediumAppText } from '../styles/text';
-import Divider from './Divider';
-import { delay } from 'lodash';
+import { MediumAppText } from '../styles/text';
 import colors from '../styles/colors';
 
 function Moods() {
@@ -35,13 +33,13 @@ function Moods() {
     setModalVisible(true);
   }
 
-  const [animationValue, setAnimationValue] = useState(new Animated.Value(0));
-  const [animationValue1, setAnimationValue1] = useState(new Animated.Value(0));
-  const [animationValue2, setAnimationValue2] = useState(new Animated.Value(0));
-  const [animationValue3, setAnimationValue3] = useState(new Animated.Value(0));
-  const [animationValue4, setAnimationValue4] = useState(new Animated.Value(0));
-  const [animationValue5, setAnimationValue5] = useState(new Animated.Value(0));
-  const [animationValue6, setAnimationValue6] = useState(new Animated.Value(0));
+  const [animationValue] = useState(new Animated.Value(0));
+  const [animationValue1] = useState(new Animated.Value(0));
+  const [animationValue2] = useState(new Animated.Value(0));
+  const [animationValue3] = useState(new Animated.Value(0));
+  const [animationValue4] = useState(new Animated.Value(0));
+  const [animationValue5] = useState(new Animated.Value(0));
+  const [animationValue6] = useState(new Animated.Value(0));
 
   //TODO refactor the loop to use animation.loop
 

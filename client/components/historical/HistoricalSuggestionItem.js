@@ -1,18 +1,7 @@
-import React, { useEffect, useState, useCallback } from 'react';
-import {
-  StyleSheet,
-  View,
-  Text,
-  TouchableOpacity,
-  Image,
-  TextInput,
-  ScrollView,
-} from 'react-native';
-import _ from 'lodash';
-import { useDispatch, useSelector } from 'react-redux';
-import { DateTime } from 'luxon';
+import React from 'react';
+import { StyleSheet, View, TouchableOpacity, Image } from 'react-native';
 import colors from '../../styles/colors';
-import { MediumAppText, BoldAppText } from '../../styles/text';
+import { BoldAppText } from '../../styles/text';
 
 function HistoricalSuggesitonItem({ onSuggestionRemove, suggestion }) {
   return (

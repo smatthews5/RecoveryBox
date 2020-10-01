@@ -1,13 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import {
-  StyleSheet,
-  View,
-  Animated,
-  Image,
-  TouchableOpacity,
-  TextInput,
-  Modal,
-} from 'react-native';
+import { StyleSheet, View, Animated } from 'react-native';
 import colors from '../styles/colors';
 
 function Loader() {
@@ -28,9 +20,9 @@ function Loader() {
     }).start();
   }
 
-  const [animationValue, setAnimationValue] = useState(new Animated.Value(0));
-  const [animationValue1, setAnimationValue1] = useState(new Animated.Value(0));
-  const [animationValue2, setAnimationValue2] = useState(new Animated.Value(0));
+  const [animationValue] = useState(new Animated.Value(0));
+  const [animationValue1] = useState(new Animated.Value(0));
+  const [animationValue2] = useState(new Animated.Value(0));
 
   useEffect(() => {
     fadeIn(animationValue, 500, 500, 0);

@@ -1,5 +1,3 @@
-import { YellowBox } from 'react-native';
-
 export default {
   blue: '#2F80ED',
   cosmicLatte: '#FFF4E4',

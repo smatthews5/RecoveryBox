@@ -1,13 +1,10 @@
-import React, { useState } from 'react';
-import { StyleSheet, View, Image, TouchableOpacity } from 'react-native';
-import { MediumAppText, BoldAppText } from '../styles/text';
-import colors from '../styles/colors';
-import _ from 'lodash';
+import React from 'react';
+import { StyleSheet, View } from 'react-native';
 
-function HistoricalFeeling({}) {
+function HistoricalFeeling() {
   return <View style={styles.container}></View>;
 }
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({}); //What?
 
 export default HistoricalFeeling;

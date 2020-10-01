@@ -1,21 +1,12 @@
 //https://formidable.com/open-source/victory/gallery/area-hover-styles
 
 import React from 'react';
-import { StyleSheet, View, Text, Image } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 import { useSelector } from 'react-redux';
-import { MediumAppText, BoldAppText } from '../../styles/text';
-import Divider from '../Divider';
-import {
-  VictoryArea,
-  VictoryScatter,
-  VictoryGroup,
-  VictoryChart,
-  VictoryBar,
-} from './Victory';
+import { BoldAppText } from '../../styles/text';
+import { VictoryScatter, VictoryGroup } from './Victory';
 import colors from '../../styles/colors';
 import _ from 'lodash';
-import { DateTime } from 'luxon';
-import { Defs, LinearGradient, Stop } from 'react-native-svg';
 
 function SuggestionsVisuals() {
   const suggestionsToShow = 5;

@@ -2,7 +2,7 @@ import React from 'react';
 import { StyleSheet, View, Image, TouchableOpacity } from 'react-native';
 import { useSelector } from 'react-redux';
 import colors from '../styles/colors';
-import { MediumAppText, BoldAppText } from '../styles/text';
+import { MediumAppText } from '../styles/text';
 
 function SuggestionItem({ name, clickHandler, selected }) {
   const dailySuggestions = useSelector((state) => state.dailyInfo.suggestions);

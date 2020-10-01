@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { View, StyleSheet, Image, Pressable } from 'react-native';
 import colors from '../styles/colors';
 import { useNavigation } from '@react-navigation/native';
-import { BoldAppText, MediumAppText } from '../styles/text';
+import { BoldAppText } from '../styles/text';
 
 function Footer() {
   const dispatch = useDispatch();

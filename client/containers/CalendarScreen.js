@@ -2,9 +2,9 @@ import React from 'react';
 import { StyleSheet, View, Image, TouchableOpacity } from 'react-native';
 import CalendarDH from '../components/Calendar';
 import colors from '../styles/colors';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 
-function CalendarScreen({ navigation, route }) {
+function CalendarScreen({ navigation }) {
   //TODO if you press on calendar with todays date it takes you back to the home screen and not to a history screen
 
   const rootName = useSelector((state) => state.helper.routeName);

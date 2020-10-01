@@ -1,8 +1,7 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { StyleSheet, View, Image, TouchableOpacity } from 'react-native';
 import { useDispatch, useSelector } from 'react-redux';
 import { MediumAppText, BoldAppText } from '../styles/text';
-import Divider from '../components/Divider';
 import colors from '../styles/colors';
 import _ from 'lodash';
 

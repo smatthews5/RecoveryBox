@@ -1,10 +1,9 @@
 import React from 'react';
-import { StyleSheet, Image, View, TouchableOpacity, Text } from 'react-native';
+import { StyleSheet, Image, View, TouchableOpacity } from 'react-native';
 import { MediumAppText } from '../styles/text';
 import SuggestionItem from './SuggestionItem';
 import { useNavigation } from '@react-navigation/native';
 import { useDispatch, useSelector } from 'react-redux';
-import Divider from './Divider';
 import colors from '../styles/colors';
 
 function SuggestionsList() {

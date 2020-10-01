@@ -1,14 +1,11 @@
 import React from 'react';
-import { StyleSheet, View, TouchableOpacity, Image } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 import { useSelector } from 'react-redux';
 import { BoldAppText, MediumAppText } from '../styles/text';
 import Divider from '../components/Divider';
-import { useNavigation } from '@react-navigation/native';
 import { DateTime, Duration } from 'luxon';
 
 function HomeWelcome({ historicalDate = false }) {
-  const navigation = useNavigation();
-
   const todaysDate = useSelector((state) => state.helper.now);
 
   const dateToUse = historicalDate ? historicalDate : todaysDate;

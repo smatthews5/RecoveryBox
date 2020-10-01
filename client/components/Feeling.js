@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { StyleSheet, View, Text, Image } from 'react-native';
+import { StyleSheet, View, Image } from 'react-native';
 import { useDispatch, useSelector } from 'react-redux';
 import { BoldAppText, MediumAppText } from '../styles/text';
 import Divider from '../components/Divider';

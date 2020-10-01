@@ -1,6 +1,6 @@
 // TODO: refactor and integrate with react-query
 
-const BASE_URL = 'http://192.168.1.244:3001';
+const BASE_URL = 'http:/localhost:3001';
 
 function fetchRequest(path, options) {
   return fetch(BASE_URL + path, options)
@@ -43,7 +43,7 @@ function postHistoricalData(body) {
   });
 }
 
-function updateHistoricalData(body) {}
+function updateHistoricalData() {}
 
 export default {
   getQuote,

@@ -1,8 +1,7 @@
-import React, { useEffect, useState, useCallback } from 'react';
+import React, { useEffect, useState } from 'react';
 import {
   StyleSheet,
   View,
-  Text,
   TouchableOpacity,
   Image,
   TextInput,
@@ -10,7 +9,6 @@ import {
 } from 'react-native';
 import HomeWelcome from '../components/HomeWelcome';
 import _ from 'lodash';
-import SuggestionItem from '../components/SuggestionItem';
 import { useDispatch, useSelector } from 'react-redux';
 import { DateTime } from 'luxon';
 import colors from '../styles/colors';

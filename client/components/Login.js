@@ -5,13 +5,12 @@ import {
   View,
   TouchableOpacity,
   Text,
-  Image,
 } from 'react-native';
-import { BoldAppText, MediumAppText } from '../styles/text';
+import { BoldAppText } from '../styles/text';
 import { useDispatch, useSelector } from 'react-redux';
 import ApiService from '../ApiService';
 import colors from '../styles/colors';
-import { NavigationContainer, StackActions } from '@react-navigation/native';
+import { StackActions } from '@react-navigation/native';
 
 function LoginScreen({ navigation }) {
   // TODO: refactor to not have to useState for passwordInput and usernameInput?

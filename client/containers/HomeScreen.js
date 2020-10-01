@@ -6,7 +6,6 @@ import {
   Image,
   TouchableOpacity,
   ScrollView,
-  TouchableHighlight,
 } from 'react-native';
 import HomeWelcome from '../components/HomeWelcome';
 import Feeling from '../components/Feeling';

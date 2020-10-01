@@ -1,12 +1,9 @@
 import React from 'react';
-import { StyleSheet, View, Text, Image } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 import { useSelector } from 'react-redux';
-import { MediumAppText, BoldAppText } from '../../styles/text';
-import Divider from '../Divider';
+import { BoldAppText } from '../../styles/text';
 import { VictoryScatter, VictoryGroup } from './Victory';
 import _ from 'lodash';
-import { DateTime } from 'luxon';
-import { Defs, LinearGradient, Stop } from 'react-native-svg';
 import colors from '../../styles/colors';
 
 function MoodVisuals() {

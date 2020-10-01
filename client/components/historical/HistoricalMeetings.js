@@ -1,10 +1,7 @@
-import React, { useState } from 'react';
-import { StyleSheet, View, Image, TouchableOpacity } from 'react-native';
-import { MediumAppText, BoldAppText } from '../styles/text';
-import colors from '../styles/colors';
-import _ from 'lodash';
+import React from 'react';
+import { StyleSheet, View } from 'react-native';
 
-function HistoricalMeetings({}) {
+function HistoricalMeetings() {
   return <View style={styles.container}></View>;
 }
 
