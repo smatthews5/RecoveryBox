@@ -13,9 +13,7 @@
     "updates": {
       "fallbackToCacheTimeout": 0
     },
-    "assetBundlePatterns": [
-      "**/*"
-    ],
+    "assetBundlePatterns": ["**/*"],
     "ios": {
       "supportsTablet": true
     },
@@ -26,8 +24,7 @@
   "android": {
     "splash": {
       "resizeMode": "cover",
-      "mdpi":  "./assets/androidsplash.png"
+      "mdpi": "./assets/androidsplash.png"
     }
   }
-
 }
