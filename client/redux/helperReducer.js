@@ -1,4 +1,4 @@
-import { DateTime } from 'luxon'
+import { DateTime } from 'luxon';
 
 const initialState = {
   now: DateTime.local().toUTC().ts,
@@ -7,38 +7,38 @@ const initialState = {
   dayRegistered: false,
   registerModal: false,
   routeName: '',
-}
+};
 
 const helperReducer = (state = initialState, action) => {
   switch (action.type) {
-    case "SELECT_DATE":
+    case 'SELECT_DATE':
       return {
         ...state,
-        selectedDate: action.payload
-      }
+        selectedDate: action.payload,
+      };
     case 'UPDATE_TIMEPERIOD':
       return {
         ...state,
-        chartTimePeriod: action.payload
-      }
+        chartTimePeriod: action.payload,
+      };
     case 'UPDATE_DAY':
       return {
         ...state,
-        dayRegistered: action.payload
-      }
+        dayRegistered: action.payload,
+      };
     case 'REGISTER_MODAL':
       return {
         ...state,
-        registerModal: action.payload
-      }
+        registerModal: action.payload,
+      };
     case 'UPDATE_ROUTE':
       return {
         ...state,
-        routeName: action.payload
-      }
+        routeName: action.payload,
+      };
     default:
       return state;
-   }
-}
+  }
+};
 
 export default helperReducer;

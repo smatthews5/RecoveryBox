@@ -1,15 +1,14 @@
-import { createStore } from "redux";
-import { combineReducers } from "redux";
-import dailyInfoReducer from './dailyInfoReducer'
-import settingsReducer from './settingsReducer'
-import userReducer from './userReducer'
-import quoteReducer from './quoteReducer'
-import historicalDataReducer from './historicalDataReducer'
-import helperReducer from './helperReducer'
-import calendarHistoricalDayReducer from './calendarHistoricalDayReducer'
+import { createStore } from 'redux';
+import { combineReducers } from 'redux';
+import dailyInfoReducer from './dailyInfoReducer';
+import settingsReducer from './settingsReducer';
+import userReducer from './userReducer';
+import quoteReducer from './quoteReducer';
+import historicalDataReducer from './historicalDataReducer';
+import helperReducer from './helperReducer';
+import calendarHistoricalDayReducer from './calendarHistoricalDayReducer';
 
-
-const rootReducer = (combineReducers)({
+const rootReducer = combineReducers({
   user: userReducer,
   dailyInfo: dailyInfoReducer,
   settings: settingsReducer,
@@ -17,8 +16,8 @@ const rootReducer = (combineReducers)({
   historicalData: historicalDataReducer,
   helper: helperReducer,
   calendarHistoricalDay: calendarHistoricalDayReducer,
-})
+});
 
 const store = createStore(rootReducer);
 
-export default store
+export default store;

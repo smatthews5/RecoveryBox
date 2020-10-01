@@ -6,16 +6,16 @@ const initialState = {
   firstName: false,
   lastName: false,
   registrationDate: false,
-}
+};
 
 const userReducer = (state = initialState, action) => {
   switch (action.type) {
-    case "UPDATE_USERNAME":
+    case 'UPDATE_USERNAME':
       return {
         ...state,
-        username: action.payload
-      }
-    case "UPDATE_USERINFO":
+        username: action.payload,
+      };
+    case 'UPDATE_USERINFO':
       return {
         ...state,
         id: action.payload.id,
@@ -24,10 +24,10 @@ const userReducer = (state = initialState, action) => {
         firstName: action.payload.firstName,
         lastName: action.payload.lastName,
         registrationDate: action.payload.registrationDate,
-      }
+      };
     default:
       return state;
   }
-}
+};
 
 export default userReducer;

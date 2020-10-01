@@ -22,12 +22,12 @@ module.exports = (sequelize, DataTypes) => {
     },
   });
 
-  Data.associate = db => {
+  Data.associate = (db) => {
     db.Data.belongsTo(db.User, {
       onDelete: 'CASCADE',
-      foreignKey: {allowNull: false}
-    })
+      foreignKey: { allowNull: false },
+    });
   };
 
   return Data;
-}
+};

@@ -1,41 +1,47 @@
 import React, { useEffect, useState } from 'react';
-import { StyleSheet, View, Modal, Image, TouchableOpacity, ScrollView, TouchableHighlight } from 'react-native';
-import HomeWelcome from '../components/HomeWelcome'
-import Feeling from '../components/Feeling'
-import Moods from '../components/Moods'
-import Meetings from '../components/Meetings'
-import SuggestionsList from '../components/SuggestionsList'
-import Footer from '../components/Footer'
-import InspirationalQuote from '../components/InspirationalQuote'
-import ApiService from '../ApiService'
+import {
+  StyleSheet,
+  View,
+  Modal,
+  Image,
+  TouchableOpacity,
+  ScrollView,
+  TouchableHighlight,
+} from 'react-native';
+import HomeWelcome from '../components/HomeWelcome';
+import Feeling from '../components/Feeling';
+import Moods from '../components/Moods';
+import Meetings from '../components/Meetings';
+import SuggestionsList from '../components/SuggestionsList';
+import Footer from '../components/Footer';
+import InspirationalQuote from '../components/InspirationalQuote';
+import ApiService from '../ApiService';
 import Loader from '../components/Loader';
-import { AppLoading } from 'expo'
-import {useDispatch, useSelector } from "react-redux";
-import {DateTime} from 'luxon';
-import colors from '../styles/colors'
+import { AppLoading } from 'expo';
+import { useDispatch, useSelector } from 'react-redux';
+import { DateTime } from 'luxon';
+import colors from '../styles/colors';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import CalendarScreen from './CalendarScreen'
-import { MediumAppText, BoldAppText } from '../styles/text'
+import CalendarScreen from './CalendarScreen';
+import { MediumAppText, BoldAppText } from '../styles/text';
 
-
-function HomeScreen ({ route }) {
-
+function HomeScreen({ route }) {
   const dispatch = useDispatch();
   useEffect(() => {
     // ApiService.getQuote()
-    // .then(quote => 
+    // .then(quote =>
     //   dispatch({
     //     type: "UPDATE_QUOTE",
     //     payload: quote
     //   })
     // )
     dispatch({
-      type: "UPDATE_ROUTE",
+      type: 'UPDATE_ROUTE',
       payload: route.name,
-    })
-  },[])
-  
+    });
+  }, []);
+
   const quoteItem = useSelector((state) => state.dailyQuote.todaysQuote);
 
   const fullHistoricalInfo = useSelector((state) => state.historicalData);
@@ -44,90 +50,112 @@ function HomeScreen ({ route }) {
   const userId = useSelector((state) => state.user.id);
   const dayRegistered = useSelector((state) => state.helper.dayRegistered);
 
-  function clickHandler (arg) {
-    arg.date = DateTime.fromMillis(todaysDate).toUTC().startOf('day').ts
-    createDailyData(arg)
+  function clickHandler(arg) {
+    arg.date = DateTime.fromMillis(todaysDate).toUTC().startOf('day').ts;
+    createDailyData(arg);
     dispatch({
-      type: "UPDATE_HISTORICALDATA_WITH_DAILYINFO",
-      payload: arg
-    })
+      type: 'UPDATE_HISTORICALDATA_WITH_DAILYINFO',
+      payload: arg,
+    });
     dispatch({
-      type: "UPDATE_DAY",
-      payload: true
-    })
+      type: 'UPDATE_DAY',
+      payload: true,
+    });
     dispatch({
-      type: "REGISTER_MODAL",
-      payload: true
-    })
+      type: 'REGISTER_MODAL',
+      payload: true,
+    });
   }
 
-  function createDailyData (dailyData) {
-    ApiService.postDailyData( {
+  function createDailyData(dailyData) {
+    ApiService.postDailyData({
       date: dailyData.date,
       meetings: dailyData.meetings,
       feeling: dailyData.feeling,
       moods: JSON.stringify(dailyData.moods),
       suggestions: JSON.stringify(dailyData.suggestions),
       UserId: userId,
-    })
-  };
+    });
+  }
 
-//TODO make sure the user can only submit the data once, if they try and submit twice it warns them and then it updates the existing information for that date
+  //TODO make sure the user can only submit the data once, if they try and submit twice it warns them and then it updates the existing information for that date
 
-  const registerModalVisible = useSelector((state) => state.helper.registerModal);
+  const registerModalVisible = useSelector(
+    (state) => state.helper.registerModal,
+  );
 
-// TODO refactor to have modal as seperate component
+  // TODO refactor to have modal as seperate component
 
-  const [confetti, setConfetti] = useState(false)
+  const [confetti, setConfetti] = useState(false);
 
   return (
-    // !quoteItem ? 
+    // !quoteItem ?
     // <Loader/>
     // :
-    <View style={styles.container}>        
+    <View style={styles.container}>
       <ScrollView>
-      <View style={styles.wrapperZero}>
-        <HomeWelcome/>
-        {/* <InspirationalQuote quote={quoteItem[0].q} author={quoteItem[0].a}/> */}
-      </View>
-      <View style={styles.wrapperOne}> 
-        <Meetings/>
-      </View>
-      <View style={styles.wrapperOne}> 
-        <Feeling/>
-      </View>
-      <View style={styles.wrapperTwo}>
-        <SuggestionsList/>
-      </View>  
-      <View style={styles.wrapperTwo}>
-        <Moods/>
-      </View>
-      <View style={styles.wrapper}>
-        <TouchableOpacity style={styles.button} onPress={() => clickHandler(dailyInfo)}>
-          <BoldAppText style={{fontSize: 14, color: colors.cosmicLatte, marginBottom:0,}}>{dayRegistered ? 'AMEND YOUR DAY' : 'REGISTER YOUR DAY'}</BoldAppText>
-        </TouchableOpacity>
-      </View>
-      <Modal visible={registerModalVisible} animationType={"slide"} transparent={true}>
-        <View style={styles.modalWrapper}>
-          <MediumAppText style={{color:'white'}}>
-            DAY REGISTERED
-          </MediumAppText>
-          <TouchableOpacity style={styles.return} onPress={() => {
-            setConfetti(true)
-            dispatch({
-              type: "REGISTER_MODAL",
-              payload: false
-            })
-          }}>
-          <Image style={styles.image} source={require('../assets/close.png')}/>
-        </TouchableOpacity>
+        <View style={styles.wrapperZero}>
+          <HomeWelcome />
+          {/* <InspirationalQuote quote={quoteItem[0].q} author={quoteItem[0].a}/> */}
         </View>
-        
-      </Modal>
+        <View style={styles.wrapperOne}>
+          <Meetings />
+        </View>
+        <View style={styles.wrapperOne}>
+          <Feeling />
+        </View>
+        <View style={styles.wrapperTwo}>
+          <SuggestionsList />
+        </View>
+        <View style={styles.wrapperTwo}>
+          <Moods />
+        </View>
+        <View style={styles.wrapper}>
+          <TouchableOpacity
+            style={styles.button}
+            onPress={() => clickHandler(dailyInfo)}
+          >
+            <BoldAppText
+              style={{
+                fontSize: 14,
+                color: colors.cosmicLatte,
+                marginBottom: 0,
+              }}
+            >
+              {dayRegistered ? 'AMEND YOUR DAY' : 'REGISTER YOUR DAY'}
+            </BoldAppText>
+          </TouchableOpacity>
+        </View>
+        <Modal
+          visible={registerModalVisible}
+          animationType={'slide'}
+          transparent={true}
+        >
+          <View style={styles.modalWrapper}>
+            <MediumAppText style={{ color: 'white' }}>
+              DAY REGISTERED
+            </MediumAppText>
+            <TouchableOpacity
+              style={styles.return}
+              onPress={() => {
+                setConfetti(true);
+                dispatch({
+                  type: 'REGISTER_MODAL',
+                  payload: false,
+                });
+              }}
+            >
+              <Image
+                style={styles.image}
+                source={require('../assets/close.png')}
+              />
+            </TouchableOpacity>
+          </View>
+        </Modal>
       </ScrollView>
-      <Footer/>
+      <Footer />
     </View>
-  )
+  );
 }
 
 const styles = StyleSheet.create({
@@ -190,8 +218,8 @@ const styles = StyleSheet.create({
     position: 'absolute',
     left: 90,
     top: 300,
-    justifyContent: "center",
-    alignItems: "center",
+    justifyContent: 'center',
+    alignItems: 'center',
     marginTop: 22,
     height: 175,
     width: 200,
@@ -207,15 +235,12 @@ const styles = StyleSheet.create({
     borderRadius: 50,
     backgroundColor: colors.blue,
     alignItems: 'center',
-    justifyContent: 'center'
+    justifyContent: 'center',
   },
   image: {
     height: 15,
     width: 15,
   },
-
 });
-
-
 
 export default HomeScreen;

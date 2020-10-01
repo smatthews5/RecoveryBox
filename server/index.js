@@ -1,15 +1,15 @@
 const express = require('express');
 const db = require('./models/index');
 const router = require('./router');
-const cors = require('cors')
+const cors = require('cors');
 
 const app = express();
 
-app.use(cors())
+app.use(cors());
 app.use(express.json());
 app.use(router);
 
-(async () =>{
+(async () => {
   try {
     await db.sequelize.authenticate();
     console.log('Connection to db has been established successfully.'); // eslint-disable-line no-console

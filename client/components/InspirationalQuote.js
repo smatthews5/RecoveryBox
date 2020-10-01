@@ -1,34 +1,34 @@
 import React, { useState, useEffect } from 'react';
 import { StyleSheet, Animated, View, Text, Image } from 'react-native';
-import {useDispatch, useSelector} from "react-redux";
-import { MediumAppText, BoldAppText } from '../styles/text'
-import Divider from '../components/Divider'
+import { useDispatch, useSelector } from 'react-redux';
+import { MediumAppText, BoldAppText } from '../styles/text';
+import Divider from '../components/Divider';
 
-function InpsirationalQuote ({ quote, author }) {
-
+function InpsirationalQuote({ quote, author }) {
   const [animationValue, setAnimationValue] = useState(new Animated.Value(0));
-  function fadeIn (value, duration1, delay1) {
+  function fadeIn(value, duration1, delay1) {
     Animated.timing(value, {
       toValue: 1,
       duration: duration1,
       delay: delay1,
       useNativeDriver: true,
-    }).start()
+    }).start();
   }
 
-  function fadeOut (value, duration) {
+  function fadeOut(value, duration) {
     Animated.timing(value, {
       toValue: 0,
       duration: duration,
       useNativeDriver: true,
-    }).start() 
+    }).start();
   }
 
   useEffect(() => {
-    fadeIn(animationValue, 1500, 0)},[])
+    fadeIn(animationValue, 1500, 0);
+  }, []);
 
   return (
-    <Animated.View style={[styles.container, {opacity:animationValue}]}>
+    <Animated.View style={[styles.container, { opacity: animationValue }]}>
       <MediumAppText style={styles.quote}>{quote}</MediumAppText>
       <BoldAppText style={styles.author}>{author}</BoldAppText>
     </Animated.View>
@@ -48,7 +48,5 @@ const styles = StyleSheet.create({
     fontSize: 17,
   },
 });
-
-
 
 export default InpsirationalQuote;

@@ -2,7 +2,10 @@
   "name": "server",
   "version": "1.0.0",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "format": "prettier --write \"**/*.{js,jsx}\"",
+    "lint": "eslint \"**/*.{js,jsx}\""
+  },
   "dependencies": {
     "cors": "^2.8.5",
     "express": "^4.17.1",
@@ -11,6 +14,10 @@
     "sequelize": "^6.3.5"
   },
   "devDependencies": {
-    "nodemon": "^2.0.4"
+    "eslint": "^7.10.0",
+    "eslint-plugin-react": "^7.21.2",
+    "eslint-plugin-react-native": "^3.10.0",
+    "nodemon": "^2.0.4",
+    "prettier": "^2.1.2"
   }
 }

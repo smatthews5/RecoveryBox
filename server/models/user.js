@@ -3,41 +3,40 @@ module.exports = (sequelize, DataTypes) => {
     id: {
       type: DataTypes.INTEGER,
       autoIncrement: true,
-      primaryKey: true
+      primaryKey: true,
     },
     username: {
       type: DataTypes.STRING,
-      allowNull: false
+      allowNull: false,
     },
     email: {
       type: DataTypes.STRING,
-      allowNull: false
+      allowNull: false,
     },
     password: {
       type: DataTypes.STRING,
-      allowNull: false
+      allowNull: false,
     },
     firstName: {
       type: DataTypes.STRING,
-      allowNull: false
+      allowNull: false,
     },
     lastName: {
       type: DataTypes.STRING,
-      allowNull: false
+      allowNull: false,
     },
     registrationDate: {
       type: DataTypes.BIGINT,
-      allowNull: false
-    }
-  })
+      allowNull: false,
+    },
+  });
 
-  User.associate = db => {
+  User.associate = (db) => {
     db.User.hasMany(db.Data);
   };
 
   return User;
 };
-
 
 // const mongoose = require('./');
 

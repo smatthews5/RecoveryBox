@@ -1,19 +1,30 @@
 import React from 'react';
-import { StyleSheet, View, Modal, Button, TouchableOpacity } from 'react-native';
-import { useSelector } from "react-redux";
-import colors from '../styles/colors'
-import { BoldAppText, MediumAppText } from '../styles/text'
+import {
+  StyleSheet,
+  View,
+  Modal,
+  Button,
+  TouchableOpacity,
+} from 'react-native';
+import { useSelector } from 'react-redux';
+import colors from '../styles/colors';
+import { BoldAppText, MediumAppText } from '../styles/text';
 
-function ModifySuggestionItem ({name, addTick, selected}) {
-
-  const suggestionList = useSelector((state) => state.settings.suggestionSettings.suggestionsList);
+function ModifySuggestionItem({ name, addTick, selected }) {
+  const suggestionList = useSelector(
+    (state) => state.settings.suggestionSettings.suggestionsList,
+  );
 
   return (
     <View style={styles.container}>
-      <View style={selected ? styles.selectedStyling : styles.unselectedStyling} >
-      <TouchableOpacity onPress={() => addTick(suggestionList ,name)}>
-        <MediumAppText style={{marginBottom:0, color:'white'}} >{name}</MediumAppText>
-      </TouchableOpacity>
+      <View
+        style={selected ? styles.selectedStyling : styles.unselectedStyling}
+      >
+        <TouchableOpacity onPress={() => addTick(suggestionList, name)}>
+          <MediumAppText style={{ marginBottom: 0, color: 'white' }}>
+            {name}
+          </MediumAppText>
+        </TouchableOpacity>
       </View>
     </View>
   );
@@ -30,8 +41,8 @@ const styles = StyleSheet.create({
   },
   selectedStyling: {
     flex: 1,
-    marginTop:5, 
-    opacity:0.85,
+    marginTop: 5,
+    opacity: 0.85,
     minWidth: 150,
     height: 30,
     backgroundColor: colors.green,
@@ -44,8 +55,8 @@ const styles = StyleSheet.create({
     flex: 1,
     width: 150,
     height: 20,
-    marginTop:5, 
-    opacity:0.5,
+    marginTop: 5,
+    opacity: 0.5,
     backgroundColor: colors.darkGrayFont,
     alignItems: 'center',
     justifyContent: 'center',

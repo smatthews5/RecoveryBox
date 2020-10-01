@@ -8,7 +8,6 @@ router.post('/adduser', query.postUserInfo);
 router.post('/adddailydata', query.postDailyData);
 router.post('/addhistoricaldata', query.postHistoricalData);
 
-
 //TODO do these routes
 router.put('/addsettings', query.postSettingsInfo);
 router.get('/querysettings', query.getSettingsInfo);

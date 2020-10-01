@@ -1,44 +1,42 @@
 import React, { useState } from 'react';
 import { StyleSheet, View, Image, TouchableOpacity } from 'react-native';
-import { useDispatch, useSelector } from "react-redux";
-import { MediumAppText, BoldAppText } from '../styles/text'
-import Divider from '../components/Divider'
-import colors from '../styles/colors'
-import _ from 'lodash'
+import { useDispatch, useSelector } from 'react-redux';
+import { MediumAppText, BoldAppText } from '../styles/text';
+import Divider from '../components/Divider';
+import colors from '../styles/colors';
+import _ from 'lodash';
 
-function Meetings () {
-
+function Meetings() {
   const dispatch = useDispatch();
-  
-  const meetings = useSelector((state) => state.dailyInfo.meetings); 
-  const onPlus = () => dispatch({type: 'INCREMENT_DAILY_MEETINGS'});
+
+  const meetings = useSelector((state) => state.dailyInfo.meetings);
+  const onPlus = () => dispatch({ type: 'INCREMENT_DAILY_MEETINGS' });
   const onMinus = () => {
-    if (meetings===0) 
-    return;
-    dispatch({type: 'DECREMENT_DAILY_MEETINGS'});
+    if (meetings === 0) return;
+    dispatch({ type: 'DECREMENT_DAILY_MEETINGS' });
   };
 
   //TODO put in a reducer as this info is used on multiple screens
   const historicalData = useSelector((state) => state.historicalData);
-  const meetingsData = _.map(historicalData, el => el.meetings) 
+  const meetingsData = _.map(historicalData, (el) => el.meetings);
 
-  function meetingsReducer (arr) {
-    const copyArr = arr.slice(0) 
-    if (copyArr.length) return copyArr.reduce((acc, value) => acc + value)
-    else return 0
-  } 
+  function meetingsReducer(arr) {
+    const copyArr = arr.slice(0);
+    if (copyArr.length) return copyArr.reduce((acc, value) => acc + value);
+    else return 0;
+  }
 
-  const totalMeetings = meetingsReducer(meetingsData)
+  const totalMeetings = meetingsReducer(meetingsData);
 
   return (
     <View style={styles.container}>
       <View style={styles.topcontainer}>
         <TouchableOpacity style={styles.button} onPress={onMinus}>
-          <Image source={require('../assets/remove.png')}/>
+          <Image source={require('../assets/remove.png')} />
         </TouchableOpacity>
-        <BoldAppText style={{fontSize: 18}}>Meetings</BoldAppText>
+        <BoldAppText style={{ fontSize: 18 }}>Meetings</BoldAppText>
         <TouchableOpacity style={styles.button} onPress={onPlus}>
-        <Image source={require('../assets/add.png')}/>
+          <Image source={require('../assets/add.png')} />
         </TouchableOpacity>
       </View>
       <View>
@@ -74,18 +72,18 @@ const styles = StyleSheet.create({
     height: 30,
     borderRadius: 50,
     alignItems: 'center',
-    justifyContent: 'center', 
+    justifyContent: 'center',
   },
   infocontainer: {
     marginTop: 10,
-    flexDirection: "row",
+    flexDirection: 'row',
     alignItems: 'center',
-    justifyContent: 'space-around'
-  }, 
+    justifyContent: 'space-around',
+  },
   infowrapper: {
-    flexDirection: "row",
+    flexDirection: 'row',
     alignItems: 'center',
-    justifyContent: 'space-around'
+    justifyContent: 'space-around',
   },
   number: {
     fontSize: 16,
@@ -95,6 +93,5 @@ const styles = StyleSheet.create({
     fontSize: 11,
   },
 });
-
 
 export default Meetings;
