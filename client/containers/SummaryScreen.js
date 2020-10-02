@@ -3,8 +3,8 @@ import { StyleSheet, View, ScrollView, TouchableOpacity } from 'react-native';
 import { useSelector, useDispatch } from 'react-redux';
 import MeetingsSummary from '../components/MeetingsSummary';
 import FeelingGraph from '../components/graphs/FeelingGraph';
-import MoodVisuals from '../components/graphs/MoodVisuals';
-import SuggestionsVisuals from '../components/graphs/SuggestionsVisuals';
+// import MoodVisuals from '../components/graphs/MoodVisuals';
+// import SuggestionsVisuals from '../components/graphs/SuggestionsVisuals';
 import Footer from '../components/Footer';
 import { Dimensions } from 'react-native';
 import Constants from 'expo-constants';
@@ -113,12 +113,12 @@ function SummaryScreen({ route }) {
           <View style={styles.feelingGraph}>
             <FeelingGraph />
           </View>
-          <View style={styles.moodGraph}>
+          {/* <View style={styles.moodGraph}>
             <MoodVisuals />
-          </View>
-          <View>
+          </View> */}
+          {/* <View>
             <SuggestionsVisuals />
-          </View>
+          </View> */}
         </View>
       </ScrollView>
       <Footer />
